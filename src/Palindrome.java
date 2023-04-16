@@ -38,6 +38,25 @@ public class Palindrome {
 		return true;
 	}
 	
+	// the solution below was worse with runtime and memory compared to isPalindromeAsString()
+	public boolean isPalindromeJustReverseString(int x) {
+		
+		String originalIntString = Integer.toString(x);
+		String newString = "";
+
+		for (int j = originalIntString.length()-1; j >= 0; j--) {
+			newString += Character.toString(originalIntString.charAt(j));
+		}
+		
+		// using == below may or may not work; in my case, it didn't work
+		// since Java checks if it's the same object in memory and will depend on
+		// if Java decided to optimize the use of string literals (it didn't in my case
+		// so the condition actually failed despite equal contents);
+		
+		// to check the actual values, use the .equals() method as below	
+		return originalIntString.equals(newString);
+	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -45,6 +64,8 @@ public class Palindrome {
 		System.out.println("isPalindrome: " + pal.isPalindromeAsString(121));
 		System.out.println("isPalindrome: " + pal.isPalindromeAsString(-121));
 		System.out.println("isPalindrome: " + pal.isPalindromeAsString(10));
+		
+		System.out.println("isPalindrome: " + pal.isPalindromeJustReverseString(121));
 		
 	}
 
