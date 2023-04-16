@@ -1,3 +1,5 @@
+import java.util.Map;
+import java.util.HashMap;
 
 public class TwoSum {
 	
@@ -40,6 +42,35 @@ public class TwoSum {
     	return solution; 	
     }
     
+    public int[] calculateSolutionTwoPassHashTable(int[] nums, int target) {
+    	
+    	int[] solution = new int[2];
+    	
+    	Map<Integer,Integer> map = new HashMap<>();
+    	// need loop to load array vals into a map with indices (key,val)
+    	// the array value is the key, index is the value
+    	for(int i = 0; i < nums.length; i++) {
+    		map.put(nums[i], i);
+    	}
+    	// calculate the second "complement" value
+    	// then check the map for that key
+    	// if found, get its value (the index)
+    	// BUT 
+    	for(int i = 0; i < nums.length; i++) {
+    		int secondValue = target - nums[i];
+    		// look in the map which is near constant time
+    		// make sure to exclude itself (since in equation i + j = t, i cannot equal j, and there are no dups in the input)
+    		if (map.containsKey(secondValue) && map.get(secondValue) != i) {
+    			solution[0] = i; // index of first value
+    			solution[1] = map.get(secondValue); // index of 2nd value (from map)
+    		}
+    	}
+    	
+    	// this solution trades space (for the hash table) for better speed (runtime complexity)
+    	// checking for that 2nd value was faster using this hashmap lookup
+    	return solution; 	
+    }
+    
     public static void main(String[] args) {
     	
     	TwoSum twoSum = new TwoSum() ;
@@ -59,6 +90,10 @@ public class TwoSum {
     	solution = twoSum.calculateSolutionBruteForce(new int[] {-1,-2,-3,-4,-5}, -8);
     	System.out.println("[" + solution[0] + "," + solution[1] + "]");
     	System.out.println("End of fourth solution");
+    	
+    	solution = twoSum.calculateSolutionTwoPassHashTable(new int[] {2,7,11,15}, 9);
+    	System.out.println("[" + solution[0] + "," + solution[1] + "]");
+    	System.out.println("End of two pass hash table solution");
 		
 	}
 }
