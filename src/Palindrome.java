@@ -42,6 +42,7 @@ public class Palindrome {
 	public boolean isPalindromeJustReverseString(int x) {
 		
 		String originalIntString = Integer.toString(x);
+		System.out.println("input: "+ originalIntString);
 		String newString = "";
 
 		for (int j = originalIntString.length()-1; j >= 0; j--) {
