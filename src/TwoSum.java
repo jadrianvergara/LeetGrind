@@ -24,7 +24,7 @@ public class TwoSum {
 	// given i, then look for j -> j = t - i
 
     
-    public int[] calculateSolution(int[] nums, int target) {
+    public int[] calculateSolutionBruteForce(int[] nums, int target) {
     	
     	int[] solution = new int[2];
     	
@@ -44,19 +44,19 @@ public class TwoSum {
     	
     	TwoSum twoSum = new TwoSum() ;
  
-    	int[] solution = twoSum.calculateSolution(new int[] {2,7,11,15}, 9);
+    	int[] solution = twoSum.calculateSolutionBruteForce(new int[] {2,7,11,15}, 9);
     	System.out.println("[" + solution[0] + "," + solution[1] + "]");
     	System.out.println("End of first solution");
     	
-    	solution = twoSum.calculateSolution(new int[] {3,2,4}, 6);
+    	solution = twoSum.calculateSolutionBruteForce(new int[] {3,2,4}, 6);
     	System.out.println("[" + solution[0] + "," + solution[1] + "]");
     	System.out.println("End of second solution");
     	
-    	solution = twoSum.calculateSolution(new int[] {3,3}, 6);
+    	solution = twoSum.calculateSolutionBruteForce(new int[] {3,3}, 6);
     	System.out.println("[" + solution[0] + "," + solution[1] + "]");
     	System.out.println("End of third solution");
     	
-    	solution = twoSum.calculateSolution(new int[] {-1,-2,-3,-4,-5}, -8);
+    	solution = twoSum.calculateSolutionBruteForce(new int[] {-1,-2,-3,-4,-5}, -8);
     	System.out.println("[" + solution[0] + "," + solution[1] + "]");
     	System.out.println("End of fourth solution");
 		
