@@ -1,6 +1,7 @@
 
 public class Palindrome {
 	
+	// pretty good solution below, beats 54% runtime and 65% memory
 	public boolean isPalindromeAsString(int x) {
 		
 		// take int, true if palindrome, false otherwise
