@@ -55,7 +55,6 @@ public class TwoSum {
     	// calculate the second "complement" value
     	// then check the map for that key
     	// if found, get its value (the index)
-    	// BUT 
     	for(int i = 0; i < nums.length; i++) {
     		int secondValue = target - nums[i];
     		// look in the map which is near constant time
