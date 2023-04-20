@@ -1,9 +1,11 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Roman {
+public class RomanNumeralToInteger {
 	
     public int romanToInt(String s) {
+    	
+    	// ** The goal is to convert a string (a valid roman numeral) to its integer representation **
     	
     	// loop thru string
     	
@@ -46,7 +48,7 @@ public class Roman {
 
 	public static void main(String[] args) {
 
-		Roman roman = new Roman();
+		RomanNumeralToInteger roman = new RomanNumeralToInteger();
 		System.out.println("input: " + "III");
 		System.out.println("output: " + roman.romanToInt("III")); // 3
 		System.out.println("------------");
@@ -60,7 +62,7 @@ public class Roman {
 		System.out.println("output: " + roman.romanToInt("XXVII")); // 27
 		System.out.println("------------");
 		System.out.println("input: " + "MCMI");
-		System.out.println("output: " + roman.romanToInt("MCMI")); // 
+		System.out.println("output: " + roman.romanToInt("MCMI")); // 1901
 		
 	}
 
