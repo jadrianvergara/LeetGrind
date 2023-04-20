@@ -1,3 +1,4 @@
+package com.leet.solutions;
 
 public class Palindrome {
 	
