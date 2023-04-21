@@ -30,6 +30,40 @@ public class LongestCommonPrefix {
         
         return prefix;
     }
+    
+    public String originalSolution(String[] s) {
+    	if (s.length == 0) {
+    		return "";
+    	} else if (s.length == 1 ) {
+    		return s[0];
+    	}
+    	
+    	String prefix = s[0];
+		int characterLoopDuration;
+    	
+    	
+    	for (int i = 1; i < s.length; i++) {
+    		
+    		String prefixCheck = "";
+    		
+    		if (s[i].length() < prefix.length()) {
+    			characterLoopDuration = s[i].length();
+    		} else {
+    			characterLoopDuration = prefix.length();
+    		}
+    		
+    		for (int j = 0; j < characterLoopDuration; j++) {
+    			if (s[i].charAt(j) == prefix.charAt(j)) {
+    				prefixCheck += s[i].charAt(j);
+    			} else {
+    				prefix = prefixCheck;
+					break;
+    			}
+    		}
+			prefix = prefixCheck;	
+    	}
+		return prefix;
+    }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -46,6 +80,8 @@ public class LongestCommonPrefix {
 		};
 		System.out.println("Longest prefix for input is " + solution.longestCommonPrefix(input));
 		System.out.println("Longest prefix for input is " + solution.longestCommonPrefix(input2));
+		System.out.println("Longest prefix for input is " + solution.originalSolution(input));
+		System.out.println("Longest prefix for input is " + solution.originalSolution(input2));
 	}
 
 }
