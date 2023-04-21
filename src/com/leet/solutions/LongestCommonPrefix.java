@@ -60,7 +60,9 @@ public class LongestCommonPrefix {
 					break;
     			}
     		}
-			prefix = prefixCheck;	
+    		
+			prefix = prefixCheck;
+			
     	}
 		return prefix;
     }
@@ -78,10 +80,15 @@ public class LongestCommonPrefix {
 				"racecar",
 				"car"
 		};
+		String[] input3 = {
+				"ab",
+				"a"
+		};
 		System.out.println("Longest prefix for input is " + solution.longestCommonPrefix(input));
 		System.out.println("Longest prefix for input is " + solution.longestCommonPrefix(input2));
 		System.out.println("Longest prefix for input is " + solution.originalSolution(input));
 		System.out.println("Longest prefix for input is " + solution.originalSolution(input2));
+		System.out.println("Longest prefix for input is " + solution.originalSolution(input3));
 	}
 
 }
